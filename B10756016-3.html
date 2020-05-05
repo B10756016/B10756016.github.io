@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B10756016 Document.write</title>
+    <style>
+        caption {
+            color: blue;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+        table {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            border: dashed green;
+            font-size: 36px;
+        }
+        
+        td {
+            color: blue;
+            border: red dotted;
+        }
+    </style>
+    <script>
+        document.write("<table>");
+        document.write("<caption>Hello Document</caption>");
+
+        document.write("<thead>");
+        document.write("<tr>");
+        document.write("<th></th>");
+        document.write("<th style=\"color:blue;border:red dotted;\">A");
+        document.write("</th>");
+        document.write("<th style=\"color:blue;border:red dotted;\">B");
+        document.write("</th>");
+        document.write("</tr>");
+        document.write("</thead>");
+
+        document.write("<tbody>");
+        document.write("<tr>");
+        document.write("<td>1");
+        document.write("</td>");
+
+        document.write("<td style=\"background-color:yellow;\">A1");
+        document.write("</td>");
+        document.write("<td style=\"background-color:green;\">B1");
+        document.write("</td>");
+
+        document.write("</tr>");
+        document.write("<tr>");
+        document.write("<td>2");
+        document.write("</td>");
+        document.write("<td style=\"background-color:yellow;\">A2");
+        document.write("</td>");
+        document.write("<td style=\"background-color:green;\">B2");
+        document.write("</td>");
+        document.write("</tr>");
+        document.write("</tbody>");
+        document.write("</table>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
