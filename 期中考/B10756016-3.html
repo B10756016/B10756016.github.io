@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取得網頁元件</title>
+    <script>
+        function textStyle() {
+            for (i = 0; i <= 2; i++) {
+                var myText = document.getElementsByName('myText')[i];
+                myText.style.borderColor = 'black';
+                myText.style.borderStyle = 'dotted';
+                myText.style.borderWidth = '0 0 1px 0';
+            }
+        }
+
+        function namecard() {
+            var inputname1 = document.getElementById("name1");
+            var inputphone = document.getElementById("phone");
+            var inputid1 = document.getElementById("id1");
+            this.inputname1 = inputname1.value;
+            this.inputphone = inputphone.value;
+            this.inputid1 = inputid1.value;
+            this.a = this.inputid1.substring(1, 2);
+        }
+
+        function shownamecard() {
+            document.write(
+                '姓名：' + this.inputname1 + '<br>' +
+                '電話號碼：' + this.inputphone + '<br>' +
+                '身分證字號：' + this.inputid1 + '<br>'
+            );
+            if (this.a == 1) {
+                document.write("性別:男姓");
+            } else if (this.a == 2) {
+                document.write("性別:女姓");
+            } else {
+                document.write("性別:錯誤");
+            }
+
+        }
+
+        function onClick() {
+            namecard();
+            var obj = new namecard();
+            namecard.prototype.display = shownamecard;
+            obj.display();
+        }
+    </script>
+</head>
+
+<body onload="textStyle()">
+    <h1>輸入結果</h1>
+    <hr>
+    <a>Input Your Name：</a><input type="text" value="" id="name1" name="myText"><br>
+    <a>Input Your Phone Number：</a><input type="text" value="" id="phone" name="myText"><br>
+    <a>Input Your ID Number：</a><input type="text" value="" id="id1" name="myText"><br>
+    <input type="button" value="送出" id="btn" onclick="onClick()">
+</body>
+
+</html>
