@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增Prototype物件</title>
+    <script>
+        function textStyle() {
+            for (i = 0; i <= 3; i++) {
+                var myText = document.getElementsByName('myText')[i];
+                myText.style.borderColor = 'black';
+                myText.style.borderStyle = 'dotted';
+                myText.style.borderWidth = '0 0 1px 0';
+            }
+        }
+
+        function rectangle() {
+            var inputHeight = document.getElementById("height");
+            var inputWidth = document.getElementById("width");
+            var inputBorderColor = document.getElementById("borderColor");
+            var inputBackGroundColor = document.getElementById("backGroundColor");
+            this.inputHeight = inputHeight.value;
+            this.inputWidth = inputWidth.value;
+            this.inputBorderColor = inputBorderColor.value;
+            this.inputBackGroundColor = inputBackGroundColor.value;
+        }
+
+        function showRectangle() {
+            document.write(
+                '邊長(長)：' + this.inputHeight + '<br>' +
+                '邊長(寬)：' + this.inputWidth + '<br>' +
+                '框線顏色：' + this.inputBorderColor + '<br>' +
+                '背景顏色：' + this.inputBackGroundColor + '<br>'
+            );
+        }
+
+        function getarea() {
+            var result = this.inputHeight * this.inputWidth;
+            document.write('面積：' + result + '<hr>');
+        }
+
+        function getlong() {
+            var result1 = this.inputHeight * 2 + this.inputWidth * 2;
+            document.write('邊長：' + result1 + '<hr>');
+        }
+
+        function onClick() {
+            rectangle();
+            var obj = new rectangle();
+            rectangle.prototype.display = showRectangle;
+            rectangle.prototype.area = getarea;
+            rectangle.prototype.long = getlong;
+            obj.display();
+            obj.area();
+            obj.long();
+        }
+    </script>
+</head>
+
+<body onload="textStyle()">
+    <h1>方形面積計算</h1>
+    <hr>
+    <a>高度：</a><input type="text" value="" id="height" name="myText"><br>
+    <a>寬度：</a><input type="text" value="" id="width" name="myText"><br>
+    <a>邊框顏色：</a><input type="text" value="" id="borderColor" name="myText"><br>
+    <a>背景顏色：</a><input type="text" value="" id="backGroundColor" name="myText"><br>
+    <input type="button" value="送出" id="btn" onclick="onClick()">
+</body>
+
+</html>
