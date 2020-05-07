@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件的階層架構</title>
+    <script>
+        function a(name, phone, id, a) {
+            this.name = prompt("請輸入姓名:", "");
+            this.phone = prompt("請輸入電話:", "");
+            this.id = prompt("請輸入身分證字號:", "");
+            this.a = this.id.substring(1, 2);
+        }
+        a();
+
+        function b() {
+            document.write("姓名:" + this.name + "</br>");
+            document.write("電話:" + this.phone + "</br>");
+            document.write("身分證字號:" + this.id + "</br>");
+            if (this.a == 1) {
+                document.write("性別:男姓");
+            } else if (this.a == 2) {
+                document.write("性別:女姓");
+            } else {
+                document.write("性別:錯誤");
+            }
+        }
+        b();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
