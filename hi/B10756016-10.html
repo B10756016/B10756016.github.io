@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繳稅計算機</title>
+    <script>
+        var x = prompt("請輸入您的請輸入您的稅前淨利", "");
+        if (x > 0 && x <= 500000) {
+            document.write("您須繳納的稅金為:" + x * 1.05 + "元");
+        } else if (x >= 500001 && x <= 1130000) {
+            document.write("您須繳納的稅金為:" + x * 1.12 + "元");
+        } else if (x >= 1130001 && x <= 2260000) {
+            document.write("您須繳納的稅金為:" + x * 1.2 + "元");
+        } else if (x >= 2260001 && x <= 4230000) {
+            document.write("您須繳納的稅金為:" + x * 1.3 + "元");
+        } else if (x >= 4230001) {
+            document.write("您須繳納的稅金為:" + x * 1.4 + "元");
+        } else {
+            document.write("輸入錯誤");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
